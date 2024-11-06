@@ -1,0 +1,6 @@
+# Node.js dependencies
+node_modules/
+
+# 다른 무시할 파일들 (예시)
+.DS_Store
+.env
