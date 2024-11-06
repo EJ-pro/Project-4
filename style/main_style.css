@@ -1,0 +1,126 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    color: #ff6600;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: none;
+    border: 1px solid #ff6600;
+    padding: 0.5rem 1rem;
+    color: #ff6600;
+    cursor: pointer;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #ff6600;
+    color: #fff;
+}
+
+.start-btn {
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* Description Section */
+.description {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.highlight {
+    color: #ff6600;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.feature {
+    background: #eee;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Level Section */
+.levels {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.level {
+    background: #ff6600;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* Custom Learning Section */
+.custom-learning {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/* Grammar and Vocabulary Section */
+.grammar-vocab {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.grammar-vocab button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Conversation Practice Section */
+.conversation-practice {
+    padding: 2rem 1rem;
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.practice {
+    background: #ff6600;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
