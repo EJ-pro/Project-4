@@ -1,0 +1,44 @@
+/* src/styles/Header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: white;
+}
+
+.logo {
+  color: #05472b;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  color: #05472b;
+}
+
+.nav-item {
+  color: #05472b;
+  text-decoration: none;
+  position: relative;
+}
+
+/* 세로 선 스타일 */
+.nav-item-separator {
+  border-left: 1px solid #05472b;
+  height: 1rem;
+  margin: 0 0.75rem;
+}
+
+/* 로그인 버튼 스타일 */
+.login-button {
+  background-color: #004d00; /* 배경색 */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
