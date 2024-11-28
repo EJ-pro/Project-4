@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, query, orderBy, getDocs } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 import "../styles/QuizScreen.css";
 
 const QuizScreen = ({ level }) => {
@@ -11,12 +12,14 @@ const QuizScreen = ({ level }) => {
   const [loading, setLoading] = useState(true);
   const [feedback, setFeedback] = useState(null); // { message: "", type: "" }
   const [error, setError] = useState(null);
+  const [quizFinished, setQuizFinished] = useState(false);
+
+  const navigate = useNavigate(); // React Router 네비게이션
 
   // Firestore에서 데이터 가져오기
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        // beginner는 기본 컬렉션, 나머지는 레벨별 컬렉션
         const collectionName =
           level === "beginner" ? "questions" : `questions_${level}`;
         const q = query(
@@ -60,7 +63,14 @@ const QuizScreen = ({ level }) => {
 
   const handleSubmit = () => {
     const currentQuestion = questions[currentQuestionIndex];
-
+    // 현재 질문 또는 답변이 없는 경우를 확인
+    if (!currentQuestion || !currentQuestion.answer) {
+      setFeedback({
+        message: "현재 질문 데이터가 잘못되었습니다. 다음 문제로 이동하세요.",
+        type: "error",
+      });
+      return;
+    }
     if (
       userAnswer.trim().toLowerCase() === currentQuestion.answer.toLowerCase()
     ) {
@@ -70,7 +80,11 @@ const QuizScreen = ({ level }) => {
           moveToNextQuestion();
         }, 1000);
       } else {
-        alert("모든 문제를 완료했습니다!");
+        // 문제를 모두 풀었을 때
+        setQuizFinished(true); // 퀴즈 완료 상태 설정
+        setTimeout(() => {
+          navigate("/"); // Main 페이지로 이동
+        }, 3000); // 3초 대기 후 이동
       }
     } else {
       setFeedback({ message: "틀렸습니다! 다시 시도해보세요.", type: "incorrect" });
@@ -106,6 +120,15 @@ const QuizScreen = ({ level }) => {
 
   if (loading) return <p>Loading questions...</p>;
   if (error) return <p>{error}</p>;
+
+  if (quizFinished) {
+    return (
+      <div className="quiz-finished">
+        <h2>고생하셨습니다! 🎉</h2>
+        <p>메인 페이지로 이동합니다...</p>
+      </div>
+    );
+  }
 
   const currentQuestion = questions[currentQuestionIndex];
 
