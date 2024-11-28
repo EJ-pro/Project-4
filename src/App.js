@@ -20,13 +20,12 @@ const App = () => {
                 <div>
                 <Hero />
                 <Levels />
+                <Footer />
                 </div>} />
             <Route path="/quiz" element={<QuizScreen />} />
           </Routes>
         </main>
 
-        {/* 항상 표시될 Footer */}
-        <Footer />
       </div>
     </Router>
   );
