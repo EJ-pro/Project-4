@@ -3,30 +3,44 @@ import { db } from "../firebase";
 import { collection, query, orderBy, getDocs } from "firebase/firestore";
 import "../styles/QuizScreen.css";
 
-const QuizScreen = () => {
+const QuizScreen = ({ level }) => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [loading, setLoading] = useState(true);
   const [feedback, setFeedback] = useState(null); // { message: "", type: "" }
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [error, setError] = useState(null);
 
+  // Firestore에서 데이터 가져오기
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const q = query(collection(db, "questions"), orderBy("id", "asc"));
+        // beginner는 기본 컬렉션, 나머지는 레벨별 컬렉션
+        const collectionName =
+          level === "beginner" ? "questions" : `questions_${level}`;
+        const q = query(
+          collection(db, collectionName),
+          orderBy("id", "asc") // id 순으로 정렬
+        );
         const querySnapshot = await getDocs(q);
         const fetchedQuestions = querySnapshot.docs.map((doc) => doc.data());
-        setQuestions(fetchedQuestions);
+
+        if (fetchedQuestions.length === 0) {
+          setError(`"${level}" 레벨에 대한 문제가 없습니다.`);
+        } else {
+          setQuestions(fetchedQuestions);
+        }
         setLoading(false);
-      } catch (error) {
-        console.error("Error fetching questions: ", error);
+      } catch (err) {
+        console.error("Error fetching questions: ", err);
+        setError("데이터를 가져오는 중 오류가 발생했습니다.");
+        setLoading(false);
       }
     };
 
     fetchQuestions();
-  }, []);
+  }, [level]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -47,7 +61,9 @@ const QuizScreen = () => {
   const handleSubmit = () => {
     const currentQuestion = questions[currentQuestionIndex];
 
-    if (userAnswer.trim().toLowerCase() === currentQuestion.answer.toLowerCase()) {
+    if (
+      userAnswer.trim().toLowerCase() === currentQuestion.answer.toLowerCase()
+    ) {
       setFeedback({ message: "정답입니다!", type: "correct" });
       if (currentQuestionIndex < questions.length - 1) {
         setTimeout(() => {
@@ -82,15 +98,14 @@ const QuizScreen = () => {
       });
   };
 
-
   const moveToNextQuestion = () => {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
     setFeedback(null);
-    setShowAnswer(false);
     setUserAnswer("");
   };
 
   if (loading) return <p>Loading questions...</p>;
+  if (error) return <p>{error}</p>;
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -107,9 +122,14 @@ const QuizScreen = () => {
             </span>
 
             <div className="timer-container">
-            <img src="/img/timer.png" alt="Timer Icon" className="timer-image" />
+              <img
+                src="/img/timer.png"
+                alt="Timer Icon"
+                className="timer-image"
+              />
               <span className="timer">
-                <i className="timer-icon fas fa-clock"></i> {formatTime(timeElapsed)}
+                <i className="timer-icon fas fa-clock"></i>{" "}
+                {formatTime(timeElapsed)}
               </span>
             </div>
           </div>
@@ -140,7 +160,6 @@ const QuizScreen = () => {
                   </button>
                   <span className="tooltip">정답: {currentQuestion.answer}</span>
                 </div>
-
               </div>
             </>
           )}

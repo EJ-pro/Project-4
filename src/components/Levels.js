@@ -113,7 +113,7 @@ const Levels = () => {
     </div>
   );
 
-  const renderTopLevel = (topLevel) => (
+  const renderTopLevel = (topLevel, levelPath) => (
     <div className="level-card_level no-border_level top-level_level">
       <img
         src={topLevel.image}
@@ -125,7 +125,7 @@ const Levels = () => {
         <p className="title_description_level">{topLevel.description}</p>
         <button
           className="learn-button_level"
-          onClick={() => navigate("/quiz")}
+          onClick={() => navigate(levelPath)}
         >
           학습 시작
         </button>
@@ -133,9 +133,9 @@ const Levels = () => {
     </div>
   );
 
-  const renderLevels = (category, topLevel) => (
+  const renderLevels = (category, topLevel, levelPath) => (
     <section className="container_level">
-      {renderTopLevel(topLevel)}
+      {renderTopLevel(topLevel, levelPath)}
       <div className="grid-layout_level">
         {levels[category].map((level) => (
           <div
@@ -162,9 +162,9 @@ const Levels = () => {
 
   return (
     <div>
-      {renderLevels("beginner", topLevels.beginner)}
-      {renderLevels("intermediate", topLevels.intermediate)}
-      {renderLevels("advanced", topLevels.advanced)}
+      {renderLevels("beginner", topLevels.beginner, "/quiz/beginner")}
+      {renderLevels("intermediate", topLevels.intermediate, "/quiz/intermediate")}
+      {renderLevels("advanced", topLevels.advanced, "/quiz/advanced")}
     </div>
   );
 };
