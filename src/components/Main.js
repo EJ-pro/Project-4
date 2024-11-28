@@ -56,7 +56,7 @@ const LevelIntroduction = ({ handleStartClick }) => {
       </div>
 
       {/* 컴포넌트 3 */}
-      <div className="container">
+      <div className="container_main">
         <div className="image-section">
           <div className="image-wrapper">
             <img src="/img/content03_img_01.png" alt="Business Meeting" /> {/* 경로 수정 */}

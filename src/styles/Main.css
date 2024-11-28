@@ -1,489 +1,611 @@
 /* 기본 스타일 */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  /*---------------네비게이션 바 스타일---------------*/
-  .navbar {
-    background-color: #05472b;
-    overflow: hidden;
-    top: 0;
-    width: 100%;
-    padding: 40px 100px; /* 좌우 여백 조정 */
-    display: flex;
-    justify-content: space-between; /* 로고와 링크들 좌우로 분리 */
-    align-items: center; /* 수직 정렬 */
-    box-sizing: border-box;
-  }
-  
-  /* 로고 스타일 */
-  .navbar .logo {
-    font-size: 60px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* 네비게이션 링크 스타일 */
-  .navbar .nav-links {
-    display: flex; /* 링크 그룹들을 가로로 배치 */
-    align-items: center; /* 수직 정렬 */
-  }
-  
-  /* 그룹 별 링크 컨테이너 */
-  .navbar .nav-links .group-left,
-  .navbar .nav-links .group-right {
-    display: flex; /* 각 그룹의 링크를 가로로 배치 */
-    align-items: center;
-  }
-  
-  /* 그룹 사이의 간격 */
-  .navbar .nav-links .group-right {
-    margin-left: 50px; /* 두 그룹 사이의 간격 조정 */
-  }
-  
-  /* 링크 스타일 */
-  .navbar .nav-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px; /* 링크 간 간격 */
-    font-size: 23px;
-    font-weight: 600;
-  }
-  
-  /* 링크 호버 효과 */
-  .navbar .nav-links a:hover {
-    color: #e5c200; /* 강조된 색상 */
-  }
-  
-  /* "Login" 버튼 스타일 */
-  .navbar .login-btn {
-    background-color: white;
-    color: black !important;
-    padding: 8px 40px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-  
-  .navbar .login-btn:hover {
-    background-color: #e5c200;
-    color: black;
-  }
-  
-  /*----------------메인 페이지 01---------------*/
-  .main-content-01 {
-    background-color: #05472b;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    padding-left: 360px;
-    display: flex; /* 플렉스를 사용해 자식 요소들을 가로로 배치 */
-    align-items: center; /* 세로 중앙 정렬 */
-    justify-content: space-between; /* 왼쪽과 오른쪽에 배치 */
-    gap: 200px;
-    margin-right: 0;
-  }
-  
-  .main-img {
-    position: relative; /* 자식 요소의 absolute 위치를 기준으로 설정 */
-    flex: 0.8;
-    overflow: hidden; /* 텍스트가 이미지 밖으로 나가지 않도록 설정 */
-  }
-  
-  .main-img img {
-    max-width: 100%; /* 이미지 크기를 부모에 맞게 제한 */
-    height: auto;
-    display: block;
-  }
-  
-  .filtered-image {
-    width: 100%;
-    height: auto;
-    filter: brightness(0.6) contrast(1.2);
-    display: block;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    bottom: 10%;
-    left: 7%;
-    color: white;
-    text-align: left;
-    z-index: 10;
-  }
-  
-  .overlay-title-text {
-    font-size: 70px;
-    font-weight: bold;
-  }
-  
-  .overlay-subtext {
-    font-size: 30px;
-    margin-top: 10px;
-  }
-  
-  .main-content-01-text {
-    flex: 1;
-    text-align: left;
-    color: white;
-  }
-  
-  .main-content-01-title {
-    font-size: 80px; /* 제목 크기 설정 */
-    font-weight: 600;
-    padding-bottom: 30px;
-  }
-  
-  .main-content-01-subtitle {
-    font-size: 30px;
-    font-weight: 400;
-    padding-bottom: 100px;
-  }
-  
-  .main-content-01-subtitle-highlight {
-    background-color: #ff9700;
-    color: black;
-    font-weight: 700;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  .main-content-01-highlight {
-    font-size: 100px; /* 강조된 부분의 크기 설정 */
-    font-weight: bold; /* 강조된 부분을 굵게 */
-  }
-  
-  .main-content-01-button {
-    padding: 20px;
-    font-size: 40px;
-    font-family: Noto Sans;
-    font-weight: 700;
-    color: #05472b;
-    border-radius: 40px;
-  }
-  
-  .main-content-01-button:hover {
-    transform: scale(1.1); /* 버튼 크기를 10% 증가 */
-  }
-  
-  /*----------------소개 컴포넌트---------------*/
-  .main-content-02 {
-    background-color: white;
-    text-align: right;
-    padding-right: 10%;
-    padding-top: 150px;
-    padding-bottom: 150px;
-  }
-  
-  .main-content-02-left {
-    text-align: left;
-    padding-left: 12%;
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-  
-  .main-content-02-title {
-    font-size: 60px;
-    font-weight: 700;
-    color: #05472b;
-    padding-bottom: 10px;
-  }
-  
-  .main-content-02-subtest {
-    font-size: 40px;
-    font-weight: 500;
-    color: #c7c7c7;
-  }
-  
-  /*----------------메인 페이지 02---------------311*/
-  .container {
-    position: relative; /* 모든 자식 요소의 절대 위치 기준 */
-    background-color: #05472b;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* 텍스트와 이미지 배치 */
-    width: 100%;
-    min-height: 100vh;
-    padding: 20px;
-    overflow: hidden;
-    padding-top: 100px;
-    padding-bottom: 50px;
-  }
-  
-  .image-section {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; /* 이미지를 오른쪽으로 이동 */
-    position: relative;
-    margin-right: 300px;
-    z-index: 1; /* 이미지 아래 레이어 */
-  }
-  
-  .image-wrapper {
-    position: relative;
-    width: 800px;
-  }
-  
-  .image-wrapper img {
-    width: 100%;
-  }
-  
-  .text-section {
-    flex: 1;
-    padding-left: 20px; /* 텍스트를 왼쪽으로 조금 이동 */
-    position: relative; /* 이 위치는 이제 필요 없음 */
-    z-index: 2;
-    margin-left: -50px; /* 텍스트를 더 왼쪽으로 이동 */
-  }
-  
-  .content03-text {
-    font-size: 35px;
-    font-weight: 600;
-    position: absolute;
-    top: 50%; /* 텍스트를 세로 방향 중앙에 배치 */
-    left: 30%; /* 텍스트를 가로 방향 중앙에 배치 */
-    transform: translate(-50%, -50%); /* 중앙 정렬 보정 */
-    z-index: 3;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    max-width: 100%; /* 텍스트가 너무 넓어지지 않도록 제한 */
-    text-align: left;
-    word-break: break-word; /* 단어가 길어지면 줄 바꿈 */
-  }
-  
-  .background-image {
-    position: absolute;
-    top: 50%;
-    right: 0; /* 오른쪽 끝으로 이동 */
-    transform: translateY(-50%); /* 세로 중앙 정렬 */
-    width: 450px; /* 이미지 크기 */
-    height: auto;
-    z-index: 1; /* 텍스트보다 아래에 배치 */
-    pointer-events: none; /* 이미지 클릭 방지 */
-    padding-top: 200px;
-    padding-bottom: 50px;
-  }
-  
-  /*----------------메인 컴포넌트 03---------------*/
-  .levels-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 70%;
-    margin: 0 auto;
-    padding-top: 100px;
-    padding-bottom: 150px;
-  }
-  
-  .level-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 400px;
-  }
-  
-  .level-box.level-box-1 {
-    padding-top: 300px;
-  }
-  
-  .level-box.level-box-2 {
-    padding-top: 150px;
-  }
-  
-  .level-box.level-box-3 {
-    padding-top: 10px;
-  }
-  
-  
-  .level-icon {
-    background-color: #00693e;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 10px 30px;
-    text-align: center;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .level-line {
-    width: 7px;
-    height: 70px;
-    background: linear-gradient(to bottom, #d4f0dd 50%, transparent 50%);
-    background-size: 12px 10px;
-    border-radius: 10;
-    margin: 10px 0;
-  }
-  
-  .level-text {
-    background: linear-gradient(to bottom, #3cc68d, #cdffdf);
-    border-radius: 20px;
-    padding: 65px 40px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    color: black;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-  }
-  
-  /*----------------메인 컴포넌트 04---------------*/
-  .study-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 75%;
-    margin: 0 auto;
-  }
-  
-  .study-box {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    position: relative;
-    width: 600px;
-  }
-  
-  .study-title {
-    background-color: #005632;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    border-radius: 150px;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: 70px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    width: 50%;
-  }
-  
-  .study-textbox {
-    background-color: white;
-    border-radius: 40px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 700;
-    color: black;
-    padding: 65px 40px;
-    margin-top: 80px;
-    border: 4px solid #005632;
-    margin-bottom: 200px;
-  }
-  
-  .study-textbox-highlight {
-    color: #FF9700;
-  }
-  
-  /*----------------메인 컴포넌트 05---------------*/
-  .level-test-container {
-    background-color: #F7F7F7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    max-width: 100%;
-  }
-  
-  /* 왼쪽 이미지 섹션 */
-  .level-test-container .image-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
-  
-  .level-test-container .checklist-image {
-    max-width: 45%;
-    height: auto;
-  }
-  
-  /* 오른쪽 텍스트 섹션 */
-  .level-test-container .text-section {
-    flex: 1;
-    margin-left: 30px;
-  }
-  
-  .test-section-title {
-    font-weight: bold;
-    font-size: 40px;
-  }
-  
-  .level-test-container p {
-    font-size: 30px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .level-test-container ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .level-test-container li {
-    font-size: 20px;
-    color: #555;
-    margin-left: 55px;
-    margin-bottom: 15px;
-    line-height: 1.6;
-  }
-  
-  .level-test-container .icon {
-    color: #FFA500; /* 주황색 화살표 */
-    font-weight: bold;
-    font-size: 40px;
-    margin-right: 5px;
-  }
-  
-  /*----------------하단 바---------------*/
-  .bottom-introduce {
-    text-align: center;
-    font-weight: 300;
-    font-size: 13px;
-    padding-bottom: 10px;
-    padding-top: 300px;
-    width: 100%;
-  }
-  
-  /*하단 네비게이션 바*/
-  .bottom-navbar {
-    background-color: #282c31; /* 네비게이션 바 배경색 */
-    color: rgb(216, 216, 216);
-    padding-top: 30px;
-    padding-bottom: 10px;
-  }
-  
-  .bottom-nav-links {
-    display: flex; /* 가로로 배치 */
-    align-items: center; /* 세로 중앙 정렬 */
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .bottom-nav-links a {
-    color: rgb(216, 216, 216);
-    text-decoration: none; /* 링크 기본 밑줄 제거 */
-    font-size: 13px; /* 링크 폰트 크기 */
-    font-weight: 400; /* 링크 폰트 두께 */
-  }
-  
-  .bottom-nav-links a:hover {
-    color: black; /* 링크 호버 시 강조 색상 */
-  }
-  
-  .bottom-navbar-text {
-    padding-top: 20px;
-    text-align: center;
-    font-family: 400;
-    font-size: 10px;
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transform-origin: top center;
+}
+/* 수직 중앙 정렬을 위한 스타일 추가 */
+html, body {
+  height: 100%;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+/*---------------네비게이션 바 스타일---------------*/
+.navbar {
+  background-color: #05472b;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  padding: 40px 100px; /* 좌우 여백 조정 */
+  display: flex;
+  justify-content: space-between; /* 로고와 링크들 좌우로 분리 */
+  align-items: center; /* 수직 정렬 */
+  box-sizing: border-box;
+}
+
+/* 로고 스타일 */
+.navbar .logo {
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* 네비게이션 링크 스타일 */
+.navbar .nav-links {
+  display: flex; /* 링크 그룹들을 가로로 배치 */
+  align-items: center; /* 수직 정렬 */
+}
+
+/* 그룹 별 링크 컨테이너 */
+.navbar .nav-links .group-left,
+.navbar .nav-links .group-right {
+  display: flex; /* 각 그룹의 링크를 가로로 배치 */
+  align-items: center;
+}
+
+/* 그룹 사이의 간격 */
+.navbar .nav-links .group-right {
+  margin-left: 50px; /* 두 그룹 사이의 간격 조정 */
+}
+
+/* 링크 스타일 */
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px; /* 링크 간 간격 */
+  font-size: 23px;
+  font-weight: 600;
+}
+
+/* 링크 호버 효과 */
+.navbar .nav-links a:hover {
+  color: #e5c200; /* 강조된 색상 */
+}
+
+/* "Login" 버튼 스타일 */
+.navbar .login-btn {
+  background-color: white;
+  color: black !important;
+  padding: 8px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.navbar .login-btn:hover {
+  background-color: #e5c200;
+  color: black;
+}
+
+/*----------------메인 페이지 01---------------*/
+.main-content-01 {
+  background-color: #05472b;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 360px;
+  display: flex; /* 플렉스를 사용해 자식 요소들을 가로로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: space-between; /* 왼쪽과 오른쪽에 배치 */
+  gap: 200px;
+  margin-right: 0;
+}
+
+.main-img {
+  position: relative; /* 자식 요소의 absolute 위치를 기준으로 설정 */
+  flex: 0.8;
+  overflow: hidden; /* 텍스트가 이미지 밖으로 나가지 않도록 설정 */
+}
+
+.main-img img {
+  max-width: 100%; /* 이미지 크기를 부모에 맞게 제한 */
+  height: auto;
+  display: block;
+}
+
+.filtered-image {
+  width: 100%;
+  height: auto;
+  filter: brightness(0.6) contrast(1.2);
+  display: block;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 10%;
+  left: 7%;
+  color: white;
+  text-align: left;
+  z-index: 10;
+}
+
+.overlay-title-text {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.overlay-subtext {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.main-content-01-text {
+  flex: 1;
+  text-align: left;
+  color: white;
+}
+
+.main-content-01-title {
+  font-size: 80px; /* 제목 크기 설정 */
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+
+.main-content-01-subtitle {
+  font-size: 30px;
+  font-weight: 400;
+  padding-bottom: 100px;
+}
+
+.main-content-01-subtitle-highlight {
+  background-color: #ff9700;
+  color: black;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.main-content-01-highlight {
+  font-size: 100px; /* 강조된 부분의 크기 설정 */
+  font-weight: bold; /* 강조된 부분을 굵게 */
+}
+
+.main-content-01-button {
+  padding: 20px;
+  font-size: 40px;
+  font-family: Noto Sans;
+  font-weight: 700;
+  color: #05472b;
+  border-radius: 40px;
+}
+
+.main-content-01-button:hover {
+  transform: scale(1.1); /* 버튼 크기를 10% 증가 */
+}
+
+/*----------------소개 컴포넌트---------------*/
+.main-content-02 {
+  background-color: white;
+  text-align: right;
+  padding-right: 10%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.main-content-02-left {
+  text-align: left;
+  padding-left: 12%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.main-content-02-title {
+  font-size: 60px;
+  font-weight: 700;
+  color: #05472b;
+  padding-bottom: 10px;
+}
+
+.main-content-02-subtest {
+  font-size: 40px;
+  font-weight: 500;
+  color: #c7c7c7;
+}
+
+/*----------------메인 페이지 02---------------311*/
+.container_main {
+  position: relative; /* 모든 자식 요소의 절대 위치 기준 */
+  background-color: #05472b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 텍스트와 이미지 배치 */
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* 이미지를 오른쪽으로 이동 */
+  position: relative;
+  margin-right: 300px;
+  z-index: 1; /* 이미지 아래 레이어 */
+}
+
+.image-wrapper {
+  position: relative;
+  width: 800px;
+}
+
+.image-wrapper img {
+  width: 100%;
+}
+
+.text-section {
+  flex: 1;
+  padding-left: 20px; /* 텍스트를 왼쪽으로 조금 이동 */
+  position: relative; /* 이 위치는 이제 필요 없음 */
+  z-index: 2;
+  margin-left: -50px; /* 텍스트를 더 왼쪽으로 이동 */
+}
+
+.content03-text {
+  font-size: 35px;
+  font-weight: 600;
+  position: absolute;
+  top: 50%; /* 텍스트를 세로 방향 중앙에 배치 */
+  left: 30%; /* 텍스트를 가로 방향 중앙에 배치 */
+  transform: translate(-50%, -50%); /* 중앙 정렬 보정 */
+  z-index: 3;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 100%; /* 텍스트가 너무 넓어지지 않도록 제한 */
+  text-align: left;
+  word-break: break-word; /* 단어가 길어지면 줄 바꿈 */
+}
+
+.background-image {
+  position: absolute;
+  top: 50%;
+  right: 0; /* 오른쪽 끝으로 이동 */
+  transform: translateY(-50%); /* 세로 중앙 정렬 */
+  width: 450px; /* 이미지 크기 */
+  height: auto;
+  z-index: 1; /* 텍스트보다 아래에 배치 */
+  pointer-events: none; /* 이미지 클릭 방지 */
+  padding-top: 200px;
+  padding-bottom: 50px;
+}
+
+/*----------------메인 컴포넌트 03---------------*/
+.levels-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.level-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 400px;
+}
+
+.level-box.level-box-1 {
+  padding-top: 300px;
+}
+
+.level-box.level-box-2 {
+  padding-top: 150px;
+}
+
+.level-box.level-box-3 {
+  padding-top: 10px;
+}
+
+
+.level-icon {
+  background-color: #00693e;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.level-line {
+  width: 7px;
+  height: 70px;
+  background: linear-gradient(to bottom, #d4f0dd 50%, transparent 50%);
+  background-size: 12px 10px;
+  border-radius: 10;
+  margin: 10px 0;
+}
+
+.level-text {
+  background: linear-gradient(to bottom, #3cc68d, #cdffdf);
+  border-radius: 20px;
+  padding: 65px 40px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/*----------------메인 컴포넌트 04---------------*/
+.study-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.study-box {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  position: relative;
+  width: 600px;
+}
+
+.study-title {
+  background-color: #005632;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 150px;
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 50%;
+}
+
+.study-textbox {
+  background-color: white;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+  padding: 65px 40px;
+  margin-top: 80px;
+  border: 4px solid #005632;
+  margin-bottom: 200px;
+}
+
+.study-textbox-highlight {
+  color: #FF9700;
+}
+
+/*----------------메인 컴포넌트 05---------------*/
+.level-test-container {
+  background-color: #F7F7F7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  max-width: 100%;
+}
+
+/* 왼쪽 이미지 섹션 */
+.level-test-container .image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.level-test-container .checklist-image {
+  max-width: 45%;
+  height: auto;
+}
+
+/* 오른쪽 텍스트 섹션 */
+.level-test-container .text-section {
+  flex: 1;
+  margin-left: 30px;
+}
+
+.test-section-title {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.level-test-container p {
+  font-size: 30px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.level-test-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.level-test-container li {
+  font-size: 20px;
+  color: #555;
+  margin-left: 55px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.level-test-container .icon {
+  color: #FFA500; /* 주황색 화살표 */
+  font-weight: bold;
+  font-size: 40px;
+  margin-right: 5px;
+}
+
+/*----------------메인 컴포넌트 06---------------*/
+/* 부모 컨테이너 스타일 */
+.studycontents-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+/* 개별 콘텐츠 박스 */
+.contentsbox-01 {
+  width: 30%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 이미지 컨테이너 */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+/* 이미지 */
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지 비율 유지 */
+}
+
+/* 텍스트 오버레이 */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+}
+
+/* 제목 스타일 */
+.contentsbox-title {
+  font-size: 2.5rem;
+  color: #1EBE7A;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 본문 텍스트 스타일 */
+.contentsbox-text {
+  font-size: 1.5rem;
+  padding-top: 30px;
+}
+
+/*----------------메인 컴포넌트 07---------------*/
+/* 부모 컨테이너 스타일 */
+.studylanguage-container {
+  display: flex; /* Flexbox를 사용하여 자식 요소들을 가로로 배치 */
+  justify-content: space-between; /* 좌우 간격을 균등하게 배치 */
+  gap: 10px; /* 자식 요소들 간의 간격 설정 */
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-bottom: 100px;
+}
+
+/* 개별 콘텐츠 박스 */
+.studylanguage-box {
+  width: 36%; /* 두 개의 박스가 화면에 잘 배치되도록 너비 설정 */
+  padding: 10px;
+  background-color: #1EBE7A; /* 배경색 설정 (선택 사항) */
+  border-radius: 40px; /* 둥근 모서리 설정 (선택 사항) */
+}
+
+/* 제목 스타일 */
+.studylanguage-title {
+  font-size: 3rem;
+  color: #FF9700;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+
+  width: 50%; /* 배경의 넓이를 줄이기 */
+  text-align: center; /* 텍스트를 중앙 정렬 */
+  margin-left: auto; /* 수평 중앙 정렬 */
+  margin-right: auto; /* 수평 중앙 정렬 */
+}
+
+/* 본문 텍스트 스타일 */
+.studylanguage-text {
+  font-weight: 600;
+  font-size: 2rem;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center; /* 텍스트를 중앙 정렬 */
+  margin-left: auto; /* 수평 중앙 정렬 */
+  margin-right: auto; /* 수평 중앙 정렬 */
+}
+
+
+
+
+/*----------------하단 바---------------*/
+.bottom-introduce {
+  text-align: center;
+  font-weight: 300;
+  font-size: 13px;
+  padding-bottom: 10px;
+  padding-top: 300px;
+  width: 100%;
+}
+
+/*하단 네비게이션 바*/
+.bottom-navbar {
+  background-color: #282c31; /* 네비게이션 바 배경색 */
+  color: rgb(216, 216, 216);
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.bottom-nav-links {
+  display: flex; /* 가로로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  justify-content: center;
+  gap: 30px;
+}
+
+.bottom-nav-links a {
+  color: rgb(216, 216, 216);
+  text-decoration: none; /* 링크 기본 밑줄 제거 */
+  font-size: 13px; /* 링크 폰트 크기 */
+  font-weight: 400; /* 링크 폰트 두께 */
+}
+
+.bottom-nav-links a:hover {
+  color: black; /* 링크 호버 시 강조 색상 */
+}
+
+.bottom-navbar-text {
+  padding-top: 20px;
+  text-align: center;
+  font-family: 400;
+  font-size: 10px;
+}

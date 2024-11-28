@@ -104,9 +104,9 @@ const Levels = () => {
   };
 
   const renderKeywords = (keywords, category) => (
-    <div className={`keyword-container ${category}-keywords`}>
+    <div className={`keyword-container_level ${category}-keywords_level`}>
       {keywords.map((keyword, index) => (
-        <span key={index} className="keyword">
+        <span key={index} className="keyword_level">
           {keyword}
         </span>
       ))}
@@ -114,13 +114,17 @@ const Levels = () => {
   );
 
   const renderTopLevel = (topLevel) => (
-    <div className="level-card no-border top-level">
-      <img src={topLevel.image} alt={topLevel.title} className="large-image" />
-      <div className="level-text">
+    <div className="level-card_level no-border_level top-level_level">
+      <img
+        src={topLevel.image}
+        alt={topLevel.title}
+        className="large-image_level"
+      />
+      <div className="level-text_level">
         <h2>{topLevel.title}</h2>
-        <p className="title_description">{topLevel.description}</p>
+        <p className="title_description_level">{topLevel.description}</p>
         <button
-          className="learn-button"
+          className="learn-button_level"
           onClick={() => navigate("/quiz")}
         >
           학습 시작
@@ -130,18 +134,24 @@ const Levels = () => {
   );
 
   const renderLevels = (category, topLevel) => (
-    <section className="container">
+    <section className="container_level">
       {renderTopLevel(topLevel)}
-      <div className="grid-layout">
+      <div className="grid-layout_level">
         {levels[category].map((level) => (
           <div
             key={level.id}
-            className={`level-card ${level.spanFull ? "full-span" : ""}`}
+            className={`level-card_level ${
+              level.spanFull ? "full-span_level" : ""
+            }`}
           >
-            <img src={level.image} alt={level.title} className="level-image" />
-            <div className="level-text">
+            <img
+              src={level.image}
+              alt={level.title}
+              className="level-image_level"
+            />
+            <div className="level-text_level">
               <h3>{level.title}</h3>
-              <p className="description">{level.description}</p>
+              <p className="description_level">{level.description}</p>
               {level.keywords && renderKeywords(level.keywords, category)}
             </div>
           </div>
