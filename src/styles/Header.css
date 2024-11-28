@@ -42,3 +42,10 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none; /* 밑줄 제거 */
+  color: inherit; /* 기존 색상 유지 */
+}
