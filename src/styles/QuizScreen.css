@@ -1,340 +1,326 @@
-  /* 기본 설정 */
-  body {
-    margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f4f7fa;
-    color: #333;
-  }
+/* 기본 설정 */
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+}
 
-  .quiz-screen {
-    display: flex;
-    flex-direction: column;
-    min-height: 88vh;
-  }
+.quiz-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 88vh;
+}
 
-  /* 헤더 */
-  .header {
-    background-color: #ffffff;
-    color: #004d40;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+/* 헤더 */
+.header {
+  background-color: #ffffff;
+  color: #004d40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  .header .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
 
-  .header .nav a {
-    color: #004d40;
-    margin: 0 1rem;
-    text-decoration: none;
-  }
+.header .nav a {
+  color: #004d40;
+  margin: 0 1rem;
+  text-decoration: none;
+}
 
-  .header .nav .logout {
-    background-color: white;
-    color: #004d40;
-    padding: 0.5rem 1.2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-  }
+.header .nav .logout {
+  background-color: white;
+  color: #05472B;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
 
-  .header .nav .logout:hover {
-    background-color: #f1f1f1;
-  }
+.header .nav .logout:hover {
+  background-color: #f1f1f1;
+}
 
-  /* 메인 콘텐츠 */
-  .main-content {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    /* 문제 영역 중앙 배치 */
-    align-items: center;
-    padding: 2rem;
-  }
+/* 메인 콘텐츠 */
+.main-content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
 
-  .question-area {
-    position: relative;
-    /* 자식 요소 배치를 위한 상대적 위치 */
-    background-color: white;
-    padding: 4rem 2rem 2rem;
-    /* 위쪽 공간 추가 */
-    border-radius: 16px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #004d40;
-    /* 외곽 테두리 */
-  }
+.question-area {
+  position: relative;
+  background-color: white;
+  padding: 4rem 2rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #004d40;
+}
+
+/* 문제 진행 상태 */
+.status-bar {
+  display: flex;
+  position: absolute;
+  top: -1.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: space-between;
+  align-items: center;
+  background-color: #05472B;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  width: calc(100% - 4rem);
+  max-width: 600px;
+  line-height: 1.5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  gap: 1rem;
+}
+
+.status-text {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.timer-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timer {
+  display: flex;
+  font-weight: bold;
+  color: #FF9700;
+}
+
+.timer-icon {
+  margin-right: 0.3rem;
+}
+
+.timer-image {
+  width: 18px;
+  height: 18px;
+}
+
+/* 문제 텍스트 */
+.question-box {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
 
 
-  /* 문제 진행 상태 */
-  .status-bar {
-    position: absolute;
-    top: -1.3rem;
-    /* 문제 영역 상단에서 띄움 */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #004d40;
-    /* 상태 바 배경색 */
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    /* 둥근 모서리 */
-    font-weight: bold;
-    font-size: 1rem;
-    width: calc(100% - 4rem);
-    /* 문제 영역 너비와 일치 */
-    max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    /* 상위 레이어 배치 */
-    border: 2px solid #004d40;
-    /* 테두리 추가 */
-    gap: 1rem;
-    /* 요소 간 간격 */
-  }
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  /* 문제 진행 상태 텍스트 */
-  .status-text {
-    display: flex;
-    align-items: center;
-    /* 세로 중앙 정렬 */
-    margin-right: auto;
-    /* 타이머와 텍스트 간 간격 확보 */
-  }
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
 
-  /* 타이머와 이미지 컨테이너 */
-  .timer-container {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    /* 타이머와 이미지 간 간격 */
-  }
+.hint-container:hover .tooltip {
+  visibility: visible;
+}
 
-  /* 타이머 */
-  .timer {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    color: #ffdd57;
-    /* 타이머 강조 색상 */
-    font-size: 1rem;
-    /* 타이머 텍스트 크기 */
-  }
+.input-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  gap: 0.5rem;
+}
 
-  .timer-icon {
-    margin-right: 0.3rem;
-    /* 아이콘과 타이머 숫자 간격 */
-  }
+.input-area input {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
 
-  /* 타이머 옆 이미지 */
-  .timer-image {
-    width: 18px;
-    /* 크기를 적절히 축소 */
-    height: 18px;
-    /* 크기를 적절히 축소 */
-    object-fit: contain;
-    /* 이미지 왜곡 방지 */
-  }
+.hint-container {
+  position: relative;
+  display: inline-block;
+}
 
-  /* 문제 텍스트 */
-  .question-box {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+.hint-button {
+  font-size: 1.5rem;
+  color: #ffa000;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
-  .question {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
+.hint-button:hover {
+  color: #ff5722;
+}
 
-  /* 힌트 컨테이너 */
-  .hint-container {
-    position: relative;
-    display: inline-block;
-  }
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 130%; /* 힌트를 버튼 위로 표시 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* 다른 요소 위에 표시 */
+}
 
-  /* 힌트 버튼 */
-  .hint-button {
-    font-size: 1.5rem;
-    color: #ffa000;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* 힌트 아래쪽에 화살표 표시 */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
 
-  /* 툴팁 스타일 */
-  .tooltip {
-    visibility: hidden;
-    /* 기본적으로 숨김 */
-    position: absolute;
-    bottom: 130%;
-    /* 버튼 위에 표시 */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
+.hint-container:hover .tooltip {
+  visibility: visible;
+}
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  /* 툴팁 화살표 */
-  .tooltip::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    /* 툴팁 아래쪽에 화살표 표시 */
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
-  }
+.hint-container:hover .tooltip {
+  visibility: visible;
+}
 
-  /* 힌트 버튼에 마우스를 올리면 툴팁 표시 */
-  .hint-container:hover .tooltip {
-    visibility: visible;
-  }
 
-  .hint-button:hover {
-    color: #ff5722;
-  }
+/* 정답 메시지 */
+.feedback.correct {
+  background-color: #d4edda; /* 연한 초록색 */
+  color: #155724; /* 진한 초록색 */
+  border: 1px solid #c3e6cb; /* 테두리 초록색 */
+}
 
-  /* 입력 필드 */
-  .input-area {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    gap: 0.5rem;
-  }
+/* 오답 메시지 */
+.feedback.incorrect {
+  background-color: #f8d7da; /* 연한 빨간색 */
+  color: #721c24; /* 진한 빨간색 */
+  border: 1px solid #f5c6cb; /* 테두리 빨간색 */
+}
 
-  .input-area input {
-    flex: 1;
-    padding: 0.7rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
+/* 건너뛰기 메시지 */
+.feedback.skipped {
+  background-color: #e2e3e5; /* 연한 회색 */
+  color: #383d41; /* 진한 회색 */
+  border: 1px solid #d6d8db; /* 테두리 회색 */
+}
 
-  .input-area input:focus {
-    outline: none;
-    border-color: #004d40;
-  }
+/* 피드백 공통 */
+.feedback-container {
+  margin: 1rem 0;
+  text-align: center;
+}
 
-  .input-area .hint-button {
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: #ffa000;
-    cursor: pointer;
-  }
+.feedback {
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-block;
+  max-width: 100%;
+}
 
-  .input-area .hint-button:hover {
-    color: #ff5722;
-  }
+/* 푸터 */
+.footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #ddd;
+}
 
-  /* 푸터 */
-  .footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    padding: 1.5rem;
-    /* 위아래 패딩 추가 */
-    border-top: 1px solid #ddd;
-  }
+.footer-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
 
-  .footer-buttons {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 1rem;
-    /* 버튼 간 간격 */
-  }
+.skip-button,
+.submit-button {
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-  .skip-button,
-  .submit-button {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.skip-button {
+  background-color: #EFEFEF;
+  color: #000000;
+}
 
-  .skip-button {
-    background-color: #f4f4f4;
-    color: #555;
-  }
+.skip-button:hover {
+  background-color: #e0e0e0;
+}
 
-  .skip-button:hover {
-    background-color: #e0e0e0;
-  }
+.submit-button {
+  background-color: #004d40;
+  color: #FF9700;
+}
 
-  .submit-button {
-    background-color: #004d40;
-    color: white;
-  }
-
-  .submit-button:hover {
-    background-color: #00332e;
-  }
-
-  .hint-container {
-    position: relative;
-    display: inline-block;
-  }
-
-  .hint-button {
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: #ffa000;
-  }
-
-  .hint-button:hover {
-    color: #ff5722;
-  }
-
-  .tooltip {
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .tooltip::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
-  }
+.submit-button:hover {
+  background-color: #00332e;
+}
