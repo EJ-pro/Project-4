@@ -1,0 +1,161 @@
+/* 컨테이너 스타일 */
+.container_level {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* 그리드 레이아웃 */
+.grid-layout_level {
+  display: grid;
+  grid-template-areas:
+    "level-1_level level-2_level"
+    "level-3_level level-3_level";
+  grid-template-columns: 1fr 1fr; /* 두 열로 구성 */
+  gap: 1rem; /* 항목 간 공백 */
+  padding: 1rem;
+}
+
+/* 각 항목 스타일 */
+.level-card_level {
+  display: flex; /* 이미지를 텍스트 옆에 배치 */
+  align-items: center; /* 세로 정렬 */
+  border: 1px solid #d3d3d3;
+  padding: 1rem;
+  text-align: left;
+  margin-bottom: 1rem; /* "초급" 항목과 그리드 간 간격 */
+}
+
+/* 어휘 확장 항목 - 테두리를 컨테이너까지 확장 */
+.full-border_level {
+  grid-column: span 2; /* 두 열에 걸쳐 확장 */
+}
+
+/* 이미지 스타일 */
+.level-image_level {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 2rem;
+}
+
+.level-button_level {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #004d00;
+  color: #ff970e;
+  border: none;
+  border-radius: 50px; /* 양 끝을 둥글게 */
+  cursor: pointer;
+}
+
+.description_level {
+  color: #a7a5a5;
+}
+
+/* 텍스트 섹션 스타일 */
+.level-text_level {
+  display: flex;
+  flex-direction: column; /* 제목과 설명을 세로로 정렬 */
+  justify-content: center; /* 수직 중앙 정렬 */
+}
+
+.level-text_level h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.level-text_level h2 {
+  margin-bottom: 0.2rem;
+}
+
+.level-text_level .title_description_level {
+  margin-top: 0rem; /* 제목과 설명 간 간격 */
+  font-size: 1.05rem;
+  color: #b1b1b1;
+}
+
+.level-text_level .description_level {
+  margin-top: 0.2rem; /* 제목과 설명 간 간격 */
+  font-size: 0.9rem;
+  color: #b1b1b1;
+}
+
+.learn-button_level {
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.4rem;
+  background-color: #05472b; /* 버튼 배경색 */
+  color: #ff9700;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 120px;
+}
+
+.large-image_level {
+  width: 150px; /* 원하는 너비 */
+  height: auto; /* 비율을 유지하면서 높이를 자동으로 조정 */
+  margin-right: 2rem;
+}
+
+/* 상단 항목 스타일 */
+.top-level_level {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* 테두리 제거 */
+.no-border_level {
+  border: none;
+}
+
+/* 그리드 레이아웃 */
+.grid-layout_level {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* 두 열을 차지하는 항목 */
+.full-span_level {
+  grid-column: span 2; /* 두 열을 차지 */
+}
+
+/* 키워드 컨테이너 스타일 */
+.keyword-container_level {
+  display: flex;
+  gap: 0.5rem; /* 키워드 간 간격 */
+  margin-top: 0.5rem;
+}
+
+/* 초급 키워드 색상 */
+.beginner-keywords_level .keyword_level {
+  background-color: hsla(36, 100%, 50%, 0.36);
+}
+
+/* 중급 키워드 색상 */
+.intermediate-keywords_level .keyword_level {
+  background-color: hsla(36, 100%, 50%, 0.66);
+}
+
+/* 고급 키워드 색상 */
+.advanced-keywords_level .keyword_level {
+  background-color: hsla(36, 100%, 50%, 0.96);
+}
+
+/* 키워드 공통 스타일 */
+.keyword_level {
+  padding: 0.3rem 0.7rem;
+  color: #333; /* 텍스트 색상 */
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
