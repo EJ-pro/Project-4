@@ -118,7 +118,13 @@ const LevelIntroduction = ({ handleStartClick }) => {
         <img src="/img/Vector(3).png" alt="Overlay Icon" className="background-image" /> {/* 경로 수정 */}
       </div>
 
-      
+      {/* 소개 02 */}
+      <div className="main-content-03">
+        <div className="main-content-02-title">다양한 레벨 지원</div>
+        <div className="main-content-02-subtest">
+          자신에게 맞는 다양한 학습 레벨들을 경험해 보세요.
+        </div>
+      </div>
 
       {/* 컴포넌트 4 */}
       <div className="levels-container">
@@ -151,7 +157,50 @@ const LevelIntroduction = ({ handleStartClick }) => {
         </div>
       </div>
 
-      {/* 컴포넌트 5: 레벨 테스트 */}
+      {/* 소개 03 */}
+      <div class="main-content-02-left">
+        <div class="main-content-02-title">한국어 화자 맞춤형 학습</div>
+      </div>
+      
+      {/* 컴포넌트 5: 한국어 화자 맞춤형 학습 */}
+      <div class="study-container">
+        <div class="study-box">
+          <div class="study-title">
+            한국어 기반 설명
+          </div>
+          <div class="study-textbox">
+            영어 학습 과정이 <span class="study-textbox-highlight">낯설지 않도록</span> <br/>
+            한국어로 친절하게 설명합니다.
+          </div>
+        </div>
+
+        <div class="study-box">
+          <div class="study-title">
+            한국어-영어 비교
+          </div>
+          <div class="study-textbox">
+            한국어와 영어의 <span class="study-textbox-highlight">차이점</span>을 명확하게 <br/>
+            보여주며, <span class="study-textbox-highlight">효과적인 학습</span>을 돕습니다.
+          </div>
+        </div>
+
+        <div class="study-box">
+          <div class="study-title">
+            한국어 기반 설명
+          </div>
+          <div class="study-textbox">
+            한국어 화자의 학습 습관과 필요를 <br/>
+            고려하여 콘텐츠를 설계했습니다.
+          </div>
+        </div>
+      </div>
+
+      {/* 소개 04 */}
+      <div class="main-content-02-left">
+        <div class="main-content-02-title">레벨 테스트</div>
+      </div>
+
+      {/* 컴포넌트 6: 레벨 테스트 */}
       <div className="level-test-container">
         <div className="image-section">
           <img
@@ -180,6 +229,14 @@ const LevelIntroduction = ({ handleStartClick }) => {
               균형적인 영어 실력을 도모합니다.
             </li>
           </ul>
+        </div>
+      </div>
+
+      {/* 소개 05 */}
+      <div class="main-content-02">
+        <div class="main-content-02-title">주제별 학습 콘텐츠</div>
+        <div class="main-content-02-subtest">
+          원하는 주제를 선택해 학습해보세요!
         </div>
       </div>
 
@@ -224,6 +281,11 @@ const LevelIntroduction = ({ handleStartClick }) => {
         </div>
       </div>
 
+      {/* 소개 06 */}
+      <div class="main-content-02">
+        <div class="main-content-02-title">문법 및 어휘 학습</div>
+      </div>
+    
       {/* 컴포넌트 7: 문법 및 어휘 학습 */}
       <div className="studylanguage-container">
         <div className="studylanguage-box">
@@ -238,6 +300,56 @@ const LevelIntroduction = ({ handleStartClick }) => {
           <div className="studylanguage-text">
             다양한 퀴즈와 게임을 통해 재미있게 <br />
             어휘력을 늘릴 수 있습니다.
+          </div>
+        </div>
+      </div>
+
+      {/* 소개 07 */}
+      <div class="main-content-02-left">
+        <div class="main-content-02-title">회화 연습</div>
+      </div>
+
+      {/* 컴포넌트 8: 제공 서비스 체험 */}
+      <div class="conversation-container">
+        <div class="conversation-box">
+          <div class="conversation-title-box">
+            E-Card에서 제공하는 다양한 서비스를<br/>
+            체험해 보세요!
+          </div>
+          <button class="conversation-button">START →</button>
+        </div>
+        <div class="features">
+          <div class="feature-box">
+            <div class="feature-box-title">
+              대화형 AI 챗봇
+            </div>
+            <div class="feature-box-text">
+              실시간으로 영어 회화를 연습할 수 있는 기능을 제공합니다.
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-title">
+              음성 인식
+            </div>
+            <div class="feature-box-text">
+              AI 챗봇이 사용자의 발음을 인식하여 자연스러운 대화를 가능하게 합니다.
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-title">
+              일일 학습 리포트
+            </div>
+            <div class="feature-box-text">
+              학습한 내용을 요약, 부족한 부분을 분석해 줍니다.
+            </div>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-title">
+              피드백 제공
+            </div>
+            <div class="feature-box-text">
+              AI 챗봇이 사용자의 발음과 문법 오류를 분석하여 피드백을 제공합니다.
+            </div>
           </div>
         </div>
       </div>
