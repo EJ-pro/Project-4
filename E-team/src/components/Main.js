@@ -87,6 +87,39 @@ const LevelIntroduction = ({ handleStartClick }) => {
         <img src="/img/Vector.png" alt="Overlay Icon" className="background-image" /> {/* 경로 수정 */}
       </div>
 
+      <div className="container_main">
+        <div className="image-section">
+          <div className="image-wrapper">
+            <img src="/img/content03_img_02.png" alt="Business Meeting" /> {/* 경로 수정 */}
+          </div>
+        </div>
+        <div className="text-section">
+          <div className="content03-text">
+            영어 시험 준비, 영어 에세이 작성, <br/>
+            영어 회화 등 학업에 필요한 영어 학습 콘텐츠를 <br/>
+            제공합니다.
+          </div>
+        </div>
+        <img src="/img/Vector(2).png" alt="Overlay Icon" className="background-image" /> {/* 경로 수정 */}
+      </div>
+
+      <div className="container_main">
+        <div className="image-section">
+          <div className="image-wrapper">
+            <img src="/img/content03_img_03.png" alt="Business Meeting" /> {/* 경로 수정 */}
+          </div>
+        </div>
+        <div className="text-section">
+          <div className="content03-text">
+            여행 중 필요한 기본적인 영어 표현, 관광지 정보, <br/>
+            이해 등을 학습할 수 있습니다.  
+          </div>
+        </div>
+        <img src="/img/Vector(3).png" alt="Overlay Icon" className="background-image" /> {/* 경로 수정 */}
+      </div>
+
+      
+
       {/* 컴포넌트 4 */}
       <div className="levels-container">
         <div className="level-box level-box-1">

@@ -207,10 +207,11 @@ html, body {
 
 /*----------------메인 페이지 02---------------311*/
 .container_main {
-  position: relative; /* 모든 자식 요소의 절대 위치 기준 */
+  position: relative;
   background-color: #05472b;
   display: flex;
-  align-items: center;
+  flex-direction: row; /* 기존의 가로 정렬을 유지 */
+  align-items: center; /* 세로 중앙 정렬 */
   justify-content: space-between; /* 텍스트와 이미지 배치 */
   width: 100%;
   min-height: 100vh;
@@ -240,8 +241,8 @@ html, body {
 
 .text-section {
   flex: 1;
-  padding-left: 20px; /* 텍스트를 왼쪽으로 조금 이동 */
-  position: relative; /* 이 위치는 이제 필요 없음 */
+  padding-left: 20px;
+  position: relative;
   z-index: 2;
   margin-left: -50px; /* 텍스트를 더 왼쪽으로 이동 */
 }
@@ -257,9 +258,9 @@ html, body {
   color: white;
   padding: 10px;
   border-radius: 5px;
-  max-width: 100%; /* 텍스트가 너무 넓어지지 않도록 제한 */
+  max-width: 100%;
   text-align: left;
-  word-break: break-word; /* 단어가 길어지면 줄 바꿈 */
+  word-break: break-word;
 }
 
 .background-image {
@@ -267,13 +268,14 @@ html, body {
   top: 50%;
   right: 0; /* 오른쪽 끝으로 이동 */
   transform: translateY(-50%); /* 세로 중앙 정렬 */
-  width: 450px; /* 이미지 크기 */
+  width: 450px;
   height: auto;
   z-index: 1; /* 텍스트보다 아래에 배치 */
-  pointer-events: none; /* 이미지 클릭 방지 */
+  pointer-events: none;
   padding-top: 200px;
   padding-bottom: 50px;
 }
+
 
 /*----------------메인 컴포넌트 03---------------*/
 .levels-container {
