@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { images, getNextIndex } from "./level-introduce.js";
 import "../styles/Main.css";
 
+
 const LevelIntroduction = ({ handleStartClick }) => {
+  // 현재 표시 중인 이미지 인덱스를 관리하는 상태
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // 5초마다 이미지 업데이트
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => getNextIndex(prevIndex, images.length));
+    }, 5000); // 5초마다 변경
+
+    return () => clearInterval(interval); // 컴포넌트 언마운트 시 정리
+  }, []);
+
+  // 현재 표시할 데이터
+  const currentImage = images[currentIndex];
   return (
     <div>
       {/* 네비게이션 바 */}
@@ -21,23 +37,23 @@ const LevelIntroduction = ({ handleStartClick }) => {
 
       {/* 메인 콘텐츠 */}
       <div className="main-content-01">
+        {/* 이미지 및 텍스트 동적 업데이트 */}
         <div className="main-img">
-          <img src="/img/main_img_01.png" alt="Main Image" />
+          <img src={currentImage.src} alt={currentImage.title} />
           <div className="overlay-text">
-            <div className="overlay-title-text">일상 회화</div>
-            <div className="overlay-subtext">
-              일상에서 자주 사용하는 짧은 표현과 문장들
-            </div>
+            <div className="overlay-title-text">{currentImage.title}</div>
+            <div className="overlay-subtext">{currentImage.subtitle}</div>
           </div>
         </div>
+
         <div className="main-content-01-text">
           <div className="main-content-01-title">
-            모두를 위한
+            모두를 위한 
             <div className="main-content-01-highlight">영어 학습 파트너</div>
           </div>
           <div className="main-content-01-subtitle">
-            영어 학습의 시작, 당신의 목표 달성을 위한
-            <span className="main-content-01-subtitle-highlight"> 최고의 선택! </span>
+            영어 학습의 시작, 당신의 목표 달성을 위한&nbsp;
+            <span className="main-content-01-subtitle-highlight">최고의 선택! </span>
           </div>
           <div className="main-content-01-btn">
             <button className="main-content-01-button" onClick={handleStartClick}>
