@@ -313,18 +313,20 @@ const LevelIntroduction = ({ handleStartClick }) => {
       <div class="conversation-container">
         <div class="conversation-box">
           <div class="conversation-title-box">
-            E-Card에서 제공하는 다양한 서비스를<br/>
+            <span class="conversation-title-highlight">E-Card</span>에서 제공하는 <br/>
+            다양한 서비스를<br/>
             체험해 보세요!
           </div>
           <button class="conversation-button">START →</button>
         </div>
         <div class="features">
-          <div class="feature-box">
+          <div class="feature-box special-background"> 
             <div class="feature-box-title">
               대화형 AI 챗봇
             </div>
             <div class="feature-box-text">
-              실시간으로 영어 회화를 연습할 수 있는 기능을 제공합니다.
+              실시간으로 영어 회화를<br />
+              연습할 수 있는 기능을 제공합니다.
             </div>
           </div>
           <div class="feature-box">
@@ -332,7 +334,8 @@ const LevelIntroduction = ({ handleStartClick }) => {
               음성 인식
             </div>
             <div class="feature-box-text">
-              AI 챗봇이 사용자의 발음을 인식하여 자연스러운 대화를 가능하게 합니다.
+              AI 챗봇이 사용자의 발음을 인식하여<br/>
+              자연스러운 대화를 가능하게 합니다.
             </div>
           </div>
           <div class="feature-box">
@@ -340,19 +343,23 @@ const LevelIntroduction = ({ handleStartClick }) => {
               일일 학습 리포트
             </div>
             <div class="feature-box-text">
-              학습한 내용을 요약, 부족한 부분을 분석해 줍니다.
+              학습한 내용을 요약, 부족한 부분을<br />
+              분석해 줍니다.
             </div>
           </div>
-          <div class="feature-box">
+          <div class="feature-box special-background"> 
             <div class="feature-box-title">
               피드백 제공
             </div>
             <div class="feature-box-text">
-              AI 챗봇이 사용자의 발음과 문법 오류를 분석하여 피드백을 제공합니다.
+              AI 챗봇이 사용자의 발음과<br />
+              문법 오류를 분석하여 피드백을<br />
+              제공합니다.
             </div>
           </div>
         </div>
       </div>
+
 
       {/* 하단 소개 */}
       <div className="bottom-introduce">
